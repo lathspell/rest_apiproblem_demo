@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>REST API Problem Demo</h1>
+
+        <h2>Server</h2>
+        <ul>
+            <li><a href="rest/calc/10:2">rest/calc/10:2</a></li>
+            <li><a href="rest/calc/10:0">rest/calc/10:0 (Division by Zero)</a></li>
+            <li><a href="rest/calc/problem">rest/calc/problem (Some API Problem)</a></li>
+            <li><a href="rest/calc/exception">rest/calc/exception (Some Exception)</a></li>
+        </ul>
+
+        <h2>Client with ApiProblem support</h2>
+        <ul>
+            <li>#{clientBacking.call('http://localhost:9091/rest_apiproblem_demo/rest/calc/10:2')}</li>
+            <li>#{clientBacking.call('http://localhost:9091/rest_apiproblem_demo/rest/calc/10:0')}</li>
+            <li>#{false or clientBacking.call('http://localhost:9091/rest_apiproblem_demo/rest/calc/problem')}</li>
+            <li>#{false or clientBacking.call('http://localhost:9091/rest_apiproblem_demo/rest/calc/exception')}</li>
+        </ul>
+
+    </h:body>
+</html>
+
